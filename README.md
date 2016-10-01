@@ -13,14 +13,35 @@ To install all the dependencies run:
 npm i
 ```
 
-For single, headless tests use:
+For continuous, headless tests use:
 
 ```shell
 npm run test:headless
+```
+
+For single, headless tests user:
+
+```shell
+npm run test:single
 ```
 
 To run code in a browser user:
 
 ```shell
 npm start
+```
+
+## Tagged Checkpoints
+
+This repo aligns with a the series the above article starts. the
+different tags are:
+
+- `components`
+- `services`
+
+To view the code as it stands at the completion of each article,
+run
+
+```shell
+git checkout tagName
 ```
