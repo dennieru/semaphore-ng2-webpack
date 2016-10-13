@@ -9,6 +9,9 @@ import { FormService } from './services/form.service';
 import { FauxFormsService } from './services/in-memory.service';
 import { RestService } from './services/rest.service';
 
+import 'materialize-css';
+import {MaterializeDirective} from 'angular2-materialize';
+
 import {
     AppComponent,
     DynamicFormComponent,
@@ -17,7 +20,11 @@ import {
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ AppComponent, DynamicFormComponent, DynamicQuestionComponent ],
+    declarations: [
+        AppComponent,
+        DynamicFormComponent,
+        DynamicQuestionComponent,
+        MaterializeDirective ],
     imports: [
         BrowserModule,
         HttpModule,
