@@ -1,4 +1,4 @@
-# Setup for Angular 2 with Webpack
+# Setup for Angular 2.1 with Webpack & materialize
 
 This is the code setup for the article
 [
