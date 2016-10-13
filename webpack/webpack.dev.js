@@ -11,7 +11,7 @@ module.exports = {
     debug: true,
     devServer: {
         contentBase: path.resolve(rootDir, 'dist'),
-        port: 9000
+        port: 7000
     },
     devtool: 'source-map',
     entry: {
@@ -21,7 +21,9 @@ module.exports = {
     module: {
         loaders: [
             { loader: 'raw', test: /\.(css|html)$/ },
-            { exclude: /node_modules/, loader: 'ts', test: /\.ts$/ }
+            { exclude: /node_modules/, loader: 'ts', test: /\.ts$/ },
+            { test: /\.(jpg|png|gif)$/, loader: 'file' },
+            { test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, loader: 'url-loader?limit=100000' }
         ]
     },
     output: {
@@ -29,6 +31,12 @@ module.exports = {
         path: path.resolve(rootDir, 'dist')
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            Hammer: "hammerjs/hammer"
+        }),
         new ChunkWebpack({
             filename: 'vendor.bundle.js',
             minChunks: Infinity,
